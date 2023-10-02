@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="sidebar">
+  <div class="logo_NIT">
+<!--    <img src="img/nit.png" alt=".">-->
+    <span class="logo_name">NIT</span>
+  </div>
+  <ul class="nav-link">
+    <li>
+      <a th:href="@{/admin/statistic}">
+        <i class='bx bx-book-reader' ></i>
+        <span class="link_name"> Thống Kê  </span>
+      </a>
+    </li>
+    <li>
+      <a th:href="@{/admin/manage-user}">
+        <i class='bx bx-book-reader' ></i>
+        <span class="link_name"> Quản lý người dùng  </span>
+      </a>
+    </li>
+    <li>
+      <a href="./quanlibaiviet.html">
+        <i class='bx bx-book-reader' ></i>
+        <span class="link_name"> Quản lý bài viết   </span>
+      </a>
+    </li>
+    <li>
+      <a href="phanhoi.html">
+        <i class='bx bx-book-reader' ></i>
+        <span class="link_name"> Phản hồi </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        <i class='bx bx-book-reader' ></i>
+        <span class="link_name"> Out </span>
+      </a>
+    </li>
+
+
+  </ul>
+</div>
+</body>
+</html>
