@@ -1,10 +1,11 @@
-
 *
 {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-family: 'Roboto', sans-serif;
+
 }
 .sidebar
 {
@@ -185,7 +186,7 @@ cursor: pointer;
     height: 130px;
     padding: 30px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,3fr);
     grid-gap: 20px;
 }
 .cardbox .card
@@ -218,18 +219,17 @@ border: 1px solid black;
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: 2fr;
 }
 .details .currentusers
 {
     position: relative;
-    display: grid;
+    padding-right: 20px;
     min-height: 200px;
     background: #fff;
 }
 .cardheader
 {
-    display: flex;
+    padding: 20px 30px;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -273,4 +273,57 @@ border: 1px solid black;
 .delete
 {
     text-decoration: none;
+}
+.Userinformation
+{
+    position: relative;
+    min-height: 53px;
+    background: #fff;
+
+}
+.details .Userinformation
+{
+    position: relative;
+    background: white;
+    
+}
+.details .Userinformation .imgbox
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.details .Userinformation .imgbox img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.details .Userinformation table tr:hover,
+.details .Userinformation table tr:hover td h4 span
+{
+    background: #03a9f4;
+    color: #fff;
+
+}
+.details .Userinformation table tr td 
+{
+    padding: 7px 10px;
+
+}
+.details .Userinformation table tr td h4
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 12px;
+}
+.details .Userinformation table tr td h4 span
+{
+    font-size: 14px;
+    color: #999;
 }

@@ -1,0 +1,330 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;}
+.sidebar
+{
+    border-radius: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: #49d4ed84;
+
+}
+.sidebar.active
+{
+    width: 70px;
+    
+}
+.sidebar .logo_NIT
+{
+height: 110px;
+width: 100%;
+display: flex;
+align-items: center;
+
+}
+.sidebar .logo_NIT img 
+{
+    
+width: 80px;
+height: 80px;
+}
+.sidebar .logo_NIT .logo_name
+{
+font-size: 30px;
+align-items: center;
+justify-content: center;
+margin-left: 30px;
+}
+.sidebar .nav-link
+{
+   
+    height: 100%;
+    
+}
+
+.sidebar .nav-link li 
+{
+    position: relative;
+    width: 280px;
+    margin-top: 50px;
+    list-style: none;
+}
+.sidebar .nav-link li:hover
+{
+    background-color: rgba(0, 0, 0, 0.247);
+}
+.sidebar .nav-link li .icon-link
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar .nav-link li i 
+{   
+    margin-right: 20px;
+    height: 50px;
+    min-width: 30px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 50px;
+    color: #fff;
+}
+.sidebar .nav-link li a 
+{
+    text-decoration: none;
+    margin-left: 20px;
+}
+.sidebar .nav-link li a .link_name
+{
+    
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 400;
+    color: black;
+}
+.main{
+    position: absolute;
+    width: calc(100% - 280px);
+    left: 280px;
+    min-height: 50px;
+    
+    transition: 0.5s;
+}
+.main.active
+{
+    width: calc(100% - 280px);
+    left: 160px;
+}
+.main .topbar
+{
+    width: 100%;
+    background: white;
+    padding: auto;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle
+{
+position: relative;
+width: 60px;
+height: 60px;
+
+/* thuộc tính làm thay đổi con trỏ chuột*/
+cursor: pointer;
+}
+.toggle::before
+{
+    content: '\f0c9';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: hsl(0, 0%, 0%);
+}
+.search
+{
+    position: relative;
+    width: 500px;
+    margin:  0 10px;
+}
+.search label
+{
+    position: relative;
+    width: 100%;
+
+}
+.search label input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding:  5px 10px;
+    outline: none;
+    border: 2px solid black;
+    padding-left: 15px;
+}
+.user
+{
+    position: relative;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    
+}
+.user i 
+{
+    
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    object-fit: cover;
+}
+.cardbox
+{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+.cardbox .card
+{
+position: relative;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+cursor: pointer;
+border: 1px solid black;
+
+}
+.cardbox .card .numbers
+{
+    position: relative;
+    font-size: 30px;
+    font-weight: 500;
+}.cardbox .card .cardname
+{
+    color: #999;
+}
+.cardbox .card .iconbox
+{
+    font-size: 40px;
+    color: #03a9f4 ;
+}
+.details
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    /*grid-gap: 20px;*/
+    /*grid-template-columns: 6fr 1fr;*/
+}
+.details .currentusers
+{
+    position: relative;
+    display: grid;
+    padding-right: 20px;
+    min-height: 200px;
+    background: #fff;
+}
+.cardheader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardheader h2
+{
+    font-weight: 600;
+}
+.btn
+{
+    position: relative;
+    padding: 5px 10px;
+    background: #03a9f4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+}
+.details table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.details table thead td
+{
+    font-weight: 600;
+}
+.details .currentusers table tr
+{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+    text-align: center;
+}
+.details .currentusers table tbody tr:hover
+{
+    background: #03a9f4;
+    color: #fff;
+}
+.update
+{
+    text-decoration: none;
+}
+.delete
+{
+    text-decoration: none;
+}
+.Userinformation
+{
+    position: relative;
+    display: grid;
+    min-height: 53px;
+    background: #fff;
+
+}
+.details .Userinformation
+{
+    position: relative;
+    background: white;
+    
+}
+.details .Userinformation .imgbox
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.details .Userinformation .imgbox img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.details .Userinformation table tr:hover,
+.details .Userinformation table tr:hover td h4 span
+{
+    background: #03a9f4;
+    color: #fff;
+
+}
+.details .Userinformation table tr td 
+{
+    padding: 7px 10px;
+
+}
+.details .Userinformation table tr td h4
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 12px;
+}
+.details .Userinformation table tr td h4 span
+{
+    font-size: 14px;
+    color: #999;
+}

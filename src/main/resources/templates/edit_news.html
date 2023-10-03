@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/edit-news.css}">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{/fragment/sidebar.html}"></div>
+
+<div class="main">
+    <div class="cardbox">
+        <div class="card">
+            <div class="">
+                <div class="cardname">Tổng bài viết  </div>
+                <div class="numbers">100</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="">
+                <div class="cardname">Bài viết tháng trước  </div>
+                <div class="numbers">100</div>
+            </div>
+        </div>
+        <div class="card d-flex ">
+            <div>
+                <span class="cardname">Bài viết tháng này</span>
+                <div class="numbers">100 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5" style="margin-left: 400px">
+        <div class="card w-50">
+            <h3 class="p-5 text-center">Chỉnh sửa bài</h3>
+            <div class="card-body">
+                <form th:action="@{'/admin/news/update/' + *{id}}" th:object="${news}" th:method="post">
+
+                    <div class="form-group mt-1">
+                        <label  for="">Tiêu Đề Bài Báo</label>
+                        <input type="text" class="form-control mt-2" th:field="*{title}">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Tác Giả</label>
+                        <input type="text" class="form-control mt-2" th:field="*{author}">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Ngày Đăng</label>
+                        <input type="Date" class="form-control mt-2" th:field="*{publishDate}">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Thể Loại</label>
+                        <select class="form-select mt-2" th:field="*{category}">
+                            <option value="Khoa Học máy tính">Khoa học máy tính</option>
+                            <option value="Mạng máy tính">Mạng máy tính và truyền thông dữ liệu</option>
+                            <option value="An toàn thông tin">An toàn thông tin</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Nội Dung</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" th:field="*{content}"></textarea>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">Nguồn</label>
+                        <input type="text" class="form-control mt-2" name="url">
+                    </div>
+                    <div class="mt-5">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button  class="btn btn-primary">Câp nhật</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
