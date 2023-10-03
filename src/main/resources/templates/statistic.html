@@ -7,9 +7,11 @@
 
     <link th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" >
     <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css}" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/trangchu.css}">
-    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0}" />
-
+    <link rel="stylesheet" th:href="@{/css/statistic.css}">
+<!--    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0}" />-->
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap}" rel="stylesheet">
 </head>
 <body>
 <div th:replace="~{/fragment/sidebar.html}"></div>
@@ -22,11 +24,7 @@
                 <div class="numbers" th:text="${quantityNewUserInMonth}"></div>
 
             </div>
-            <div class="iconbox">
-                <span class="material-symbols-outlined">
-                    person
-                    </span>
-            </div>
+
         </div>
 
         <div class="card">
@@ -35,23 +33,14 @@
 
                 <div class="numbers" th:text="${quantityNewsInMonth}"></div>
             </div>
-            <div class="iconbox">
-                <span class="material-symbols-outlined">
-                    menu_book
-                    </span>
-            </div>
+
         </div>
         <div class="card">
             <div>
                 <div class="cardname">Số lượng bình luận trong tháng  <span th:text="${monthDate}"></span></div>
                 <div class="numbers" th:text="${quantityNewCommentInMonth}"></div>
             </div>
-            <div class="iconbox">
-                 <span class="material-symbols-outlined">
-                    chat
-                    </span>
 
-            </div>
         </div>
         <div class="card">
             <div>
@@ -59,11 +48,7 @@
 
                 <div class="numbers" th:text="${quantityReportInMonth}"></div>
             </div>
-            <div class="iconbox">
-                 <span class="material-symbols-outlined">
-                    favorite
-                    </span>
-            </div>
+
         </div>
     </div>
 

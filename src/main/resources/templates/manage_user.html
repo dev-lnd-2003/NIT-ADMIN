@@ -5,8 +5,11 @@
     <title>Title</title>
     <link th:href="@{https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css}" >
     <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css}" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/quanlinguoidung.css}">
-    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0}" />
+    <link rel="stylesheet" th:href="@{/css/manage-user.css}">
+<!--    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0}" />-->
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap}" rel="stylesheet">
     <style>
         .dialog {
             position: fixed;
@@ -65,11 +68,7 @@
                 <div class="cardname">Số người dùng trong hệ thống </div>
                 <div class="numbers" th:text="${countUser}"></div>
             </div>
-            <div class="iconbox">
-                <span class="material-symbols-outlined">
-                    person
-                </span>
-            </div>
+
         </div>
         <div class="card">
             <div>
@@ -77,28 +76,20 @@
 
                 <div class="numbers" th:text="${getUserPreviousInMonth}"></div>
             </div>
-            <div class="iconbox">
-                <span class="material-symbols-outlined">
-                    favorite
-                    </span>
-            </div>
+
         </div>
         <div class="card">
             <div>
                 <div class="cardname">Số người dùng trong tháng này </div>
                 <div class="numbers" th:text="${getNewUserInMonth}"></div>
             </div>
-            <div class="iconbox">
-                <span class="material-symbols-outlined">
-                    menu_book
-                    </span>
-            </div>
+
         </div>
     </div>
 
     <div class="details" style="margin-top: 50px">
         <div class="currentusers">
-            <h2>Danh sách người dùng</h2>
+            <h2 style="text-align: center">Danh sách người dùng</h2>
             <table>
                 <thead>
                 <tr style="height: 50px">
@@ -118,47 +109,46 @@
                     <td th:text="${user.email}"></td>
                     <td th:text="${user.gender ? 'Nam' : 'Nữ'}"></td>
                     <td>
-                        <a href="#my-dialog" class="update">Cập nhật</a>
+                        <form th:action="@{'/admin/manage-user/delete/' + ${user.id}}" method="post">
+                            <button>Xóa</button>
+                        </form>
 
-
-                        |
-                        <a href="#" class="delete">Xóa</a>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <div class="Userinformation">
-            <h2>Bảng xếp hạng đóng góp</h2>
-            <table>
-                <tbody>
-                <tr>
-                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>
-                    <td><h4>người <br><span>việt naam</span></h4></td>
-                </tr>
-                <tr>
+<!--        <div class="Userinformation">-->
+<!--            <h2>Bảng xếp hạng đóng góp</h2>-->
+<!--            <table>-->
+<!--                <tbody>-->
+<!--                <tr>-->
+<!--                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>-->
+<!--                    <td><h4>người <br><span>việt naam</span></h4></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
 
-                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>
-                    <td><h4>người <br><span>việt naam</span></h4></td>
-                </tr>
-                <tr>
+<!--                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>-->
+<!--                    <td><h4>người <br><span>việt naam</span></h4></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
 
-                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>
-                    <td><h4>người <br><span>việt naam</span></h4></td>
-                </tr>
-                <tr>
+<!--                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>-->
+<!--                    <td><h4>người <br><span>việt naam</span></h4></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
 
-                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>
-                    <td><h4>người <br><span>việt naam</span></h4></td>
-                </tr>
-                <tr>
+<!--                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>-->
+<!--                    <td><h4>người <br><span>việt naam</span></h4></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
 
-                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>
-                    <td><h4>người <br><span>việt naam</span></h4></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+<!--                    <td width="60px"><div class="imgbox"><img src="./img/baiihoc1.jpg" alt="mam"></div></td>-->
+<!--                    <td><h4>người <br><span>việt naam</span></h4></td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
 
     </div>
 </div>
