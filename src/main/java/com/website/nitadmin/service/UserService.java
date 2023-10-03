@@ -14,6 +14,8 @@ public interface UserService {
 
     public Users update(Integer id,Users users);
 
+    public void delete(Integer id);
+
     public int countUser();
 
     public int getOldUserCountInPreviousMonth();

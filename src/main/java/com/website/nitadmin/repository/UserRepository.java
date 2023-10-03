@@ -16,7 +16,7 @@ public interface UserRepository extends JpaRepository<Users, Integer> {
     int countNewUsersCountInMonth(@Param("date") Date date);
 
 
-    @Query("SELECT COUNT(u) FROM Users u WHERE u.createDate =:date")
+    @Query("SELECT COUNT(u) FROM Users u WHERE u.createDate < :date")
     int countOldUsersCountInPreviousMonth(@Param("date") Date date);
 
     @Query("SELECT u FROM Users u WHERE u.createDate > :date")

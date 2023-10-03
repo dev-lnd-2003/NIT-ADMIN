@@ -17,6 +17,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public News save(News news) {
+        news.setActive(true);
         return newsRepository.save(news);
     }
 
@@ -27,7 +28,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public void delete(Integer id) {
-
+        newsRepository.deleteById(id);
     }
 
     @Override
