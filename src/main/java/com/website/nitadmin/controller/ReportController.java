@@ -24,11 +24,11 @@ public class ReportController {
     @PostMapping("/reports/confirm/{reportId}")
     public String confirmReport(@PathVariable Integer reportId) {
         reportService.confirmReportAndDeleteNews(reportId);
-        return "redirect:/admin/report"; // Chuyển hướng về trang danh sách báo cáo
+        return "redirect:/admin/report";
     }
     @PostMapping("/reports/un-confirm/{reportId}")
     public String unConfirmReport(@PathVariable Integer reportId) {
         reportService.unConfirmReport(reportId);
-        return "redirect:/admin/report"; // Chuyển hướng về trang danh sách báo cáo
+        return "redirect:/admin/report";
     }
 }
